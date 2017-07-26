@@ -92,6 +92,8 @@
 }
 ```
 
+4. 搞定，就是这么简单！
+
 ## 有图有真相
 
 <img src='https://gw.alipayobjects.com/zos/rmsportal/WIzZGaviupJrsuNiaddg.gif' />
