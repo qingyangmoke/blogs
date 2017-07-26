@@ -47,7 +47,7 @@
   };
   // 初始化App
   var app = new Tiny.Application(config);
-  // 新建场景
+  // 新建场景
   var container = new Tiny.Container();
   // 启动场景
   app.run(container);
@@ -64,9 +64,9 @@
 
   // 取出来骨骼数据
   var dragonBonesData = resources["dragonBonesData"].data;
-  // 从资源中取出来骨骼纹理数据
+  // 从资源中取出来骨骼纹理数据
   var textureData = resources["textureDataA"].data;
-  // 从资源中取出来骨骼纹理图片
+  // 从资源中取出来骨骼纹理图片
   var texture = resources["textureA"].texture;
 
   // 添加骨骼数据
