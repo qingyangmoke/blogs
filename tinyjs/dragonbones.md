@@ -97,4 +97,4 @@
 <img src='https://gw.alipayobjects.com/zos/rmsportal/WIzZGaviupJrsuNiaddg.gif' />
 
 
-> 本实例完整代码已托管到了 [Github](https://github.com/qingyangmoke/blogs-tutorial/tree/master/tinyjs/dragonbones-1/)
+> 本实例完整代码已托管到了Github, [源码地址](https://github.com/qingyangmoke/blogs-tutorial/tree/master/tinyjs/dragonbones-1/)
