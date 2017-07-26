@@ -85,7 +85,7 @@
   // 播放骨骼动画 DragonBones Pro 默认生成四个动作 fall、jump、stand、walk
   var animationState = armatureDisplay.play('walk');
 
-  // 把骨骼对象添加到场景中
+  // 把骨骼对象添加到场景中
   container.addChild(armatureDisplay);
 
   /*+++++++++++ 创建骨骼动画 END   ++++++++++++*/
