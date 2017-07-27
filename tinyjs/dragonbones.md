@@ -12,13 +12,13 @@
 
  3. 引入tiny.js核心库 
 
- ```js
+```HTML
  <script src="https://a.alipayobjects.com/g/tiny/tiny/1.0.1/tiny.js"></script>
- ```
+```
 
  4. 引入tiny-plugin-dragonbones骨骼动画插件
  
-```js
+```HTML
  <script src="https://a.alipayobjects.com/g/tiny-plugins/tinyjs-plugin-dragonbones/0.0.1/index.js"></script>
 ```
 
