@@ -17,6 +17,7 @@
  ```
 
  4. 引入tiny-plugin-dragonbones骨骼动画插件
+ 
 ```js
  <script src="https://a.alipayobjects.com/g/tiny-plugins/tinyjs-plugin-dragonbones/0.0.1/index.js"></script>
 ```
