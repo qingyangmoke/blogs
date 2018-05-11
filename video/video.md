@@ -1,8 +1,8 @@
 # 视频相关的坑
 
-## 微信中处理
+##  微信中处理
 
-### 内联 去掉控制条
+### 1.1 内联 去掉控制条
 
 ``` html
 <video id="inline-video" 
@@ -13,12 +13,11 @@
        x5-video-player-fullscreen="true" 
        x-webkit-airplay="true" 
        webkit-playsinline="true" 
-       playsinline="true" 
-       autoplay="true"
+       playsinline="true"  
        preload="auto"></video>
 ```
 
-### 自动播放 & 预加载 
+### 1.2 自动播放 & 预加载 
 
 ``` js
    // 在该事件里 play pause一下 视频会处于加载状态 相当于预加载了
@@ -30,7 +29,7 @@
   }, false);
 ```
 
-### 黑屏 & 判断视频是否加载
+### 1.3 黑屏 & 判断视频是否加载
 
 ``` js
   video.addEventListener('timeupdate', function (){
@@ -42,7 +41,7 @@
   });
 ```
 
-### 监听播放结束事件
+### 1.4 监听播放结束事件
 
 ``` js
   video.addEventListener('ended', function (){      
@@ -50,7 +49,7 @@
   }); 
 ```
 
-### 监听播放暂停事件
+### 1.5 监听播放暂停事件
 
 ``` js
   video.addEventListener('pause', function (){      
