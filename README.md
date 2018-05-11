@@ -16,3 +16,4 @@
   * [理解object.assign](./js/object.assign.md)
   * [小心for-in](./js/for-in.md)
   * [hasOwnProperty使用](./js/hasOwnProperty.md)
+  * [继承](./js/inherit.md)
