@@ -125,7 +125,7 @@ __support检查环境的特性，它与media比较类似。__
 - @color-profile 是 SVG1.0 引入的CSS特性，但是实现状况不怎么好。
 - @document 还没讨论清楚，被推迟到了CSS4中。
 - @font-feature-values 。todo查一下。
-## 普通规则
+### 普通规则
 接下来我们进入qualified rule，也就是普通规则的部分，看看这里有什么需要我们记住的内容。
 qualified rule主要是由选择器和声明区块构成。声明区块又由属性和值构成。我在下面的列表中，介绍了这部分语法的组成要点。
 
