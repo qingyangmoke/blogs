@@ -119,7 +119,7 @@ console.log([o, n, s, b, d, arg, r, f, arr, e].map(v => Object.prototype.toStrin
 ```
 因此，在ES3和之前的版本，JS中类的概念是相当弱的，它仅仅是运行时的一个字符串属性。
 
-__在ES5开始，class私有属性被 Symbol.toStringTag 代替__ !! ，Object.prototype.toString 的意义从命名上不再跟 class 相关。我们甚至可以自定义 Object.prototype.toString 的行为，以下代码展示了使用Symbol.toStringTag来自定义 Object.prototype.toString 的行为：
+__在ES5开始，class私有属性被 Symbol.toStringTag 代替__  ，Object.prototype.toString 的意义从命名上不再跟 class 相关。我们甚至可以自定义 Object.prototype.toString 的行为，以下代码展示了使用Symbol.toStringTag来自定义 Object.prototype.toString 的行为：
 
 ```
     var o = { [Symbol.toStringTag]: "MyObject" }
