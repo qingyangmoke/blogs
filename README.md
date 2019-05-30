@@ -20,7 +20,7 @@
   
 ### 重学前端系列
 
-  * [理解object.assign](./js/object.assign.md)
+  * [开篇词 | 从今天起，重新理解前端](./anew/anew_01.md)
   * [小心for-in](./js/for-in.md)
   * [hasOwnProperty使用](./js/hasOwnProperty.md)
   * [继承](./js/inherit.md)
