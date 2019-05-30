@@ -17,7 +17,7 @@ JavaScript类型对每个前端程序员来说，几乎都是最为熟悉的概�
 
 > 运行时类型是代码实际执行过程中我们用到的类型。所有的类型数据都会属于7个类型之一。从变量、参数、返回值到表达式中间结果，任何JavaScript代码运行过程中产生的数据，都具有运行时类型。
 
-## 类型
+### 类型
 
 JavaScript语言的每一个值都属于某一种数据类型。JavaScript语言规定了7种语言类型。语言类型广泛用于变量、函数参数、表达式、函数返回值等场合。根据最新的语言标准，这7种语言类型是：
 
@@ -31,7 +31,7 @@ JavaScript语言的每一个值都属于某一种数据类型。JavaScript语言
 
 除了ES6中新加入的Symbol类型，剩下6种类型都是我们日常开发中的老朋友了，但是，要想回答文章一开始的问题，我们需要重新认识一下这些老朋友，下面我们就来从简单到复杂，重新学习一下这些类型。
 
-## Undefined、Null
+### Undefined、Null
 
 我们的第一个问题，为什么有的编程规范要求用void 0代替undefined？现在我们就分别来看一下。
  Undefined 类型表示未定义 ，它的类型只有一个值，就是 undefined。任何变量在赋值前是 Undefined 类型、值为 undefined，一般我们可以用全局变量undefined（就是名为undefined的这个变量）来表达这个值，或者 void 运算来把任一一个表达式变成 undefined 值。
@@ -39,10 +39,10 @@ JavaScript语言的每一个值都属于某一种数据类型。JavaScript语言
 Undefined跟 null 有一定的表意差别，null表示的是：“定义了但是为空”。所以，在实际编程时，我们一般不会把变量赋值为 undefined，这样可以保证所有值为 undefined 的变量，都是从未赋值的自然状态。
 
 Null 类型也只有一个值，就是 null，它的语义表示空值，与 undefined 不同，null 是 JavaScript 关键字，所以在任何代码中，你都可以放心用 null 关键字来获取 null 值。
-## Boolean
+### Boolean
 
 Boolean 类型有两个值， true 和 false，它用于表示逻辑意义上的真和假，同样有关键字 true 和 false 来表示两个值。这个类型很简单，我就不做过多介绍了。
-## String
+### String
 
 我们来看看字符串是否有最大长度。
 
@@ -61,7 +61,7 @@ JavaScript 字符串把每个 UTF16 单元当作一个字符来处理，所以�
 
 JavaScript 这个设计继承自 Java，最新标准中是这样解释的，这样设计是为了“ 性能和尽可能实现起来简单 ”。因为现实中很少用到 BMP 之外的字符。
 
-## Number
+### Number
 
 下面，我们来说说Number类型。Number类型表示我们通常意义上的“数字”。这个数字大致对应数学中的有理数，当然，在计算机中，我们有一定的精度限制。
 
@@ -90,7 +90,7 @@ console.log( 0.1 + 0.2 == 0.3);
 console.log( Math.abs(0.1 + 0.2 - 0.3) <= Number.EPSILON);
 ```
 检查等式左右两边差的绝对值是否小于最小精度，才是正确的比较浮点数的方法。这段代码结果就是 true 了。
-## Symbol
+### Symbol
 
 Symbol 是 ES6 中引入的新类型，它是一切非字符串的对象key的集合，在ES6规范中，整个对象系统被用Symbol 重塑。
 在后面的文章中，我会详细叙述 Symbol 跟对象系统。这里我们只介绍Symbol类型本身：它有哪些部分，它表示什么意思，以及如何创建Symbol类型。
@@ -124,7 +124,7 @@ var mySymbol = Symbol("my symbol");
 
 这些标准中被称为“众所周知”的 Symbol，也构成了语言的一类接口形式。它们允许编写与语言结合更紧密的 API。
 
-## Object
+### Object
 
 Object 是 JavaScript 中最复杂的类型，也是 JavaScript 的核心机制之一。Object表示对象的意思，它是一切有形和无形物体的总称。
 下面我们来看一看，为什么给对象添加的方法能用在基本类型上？
@@ -164,7 +164,7 @@ console.log("abc".charAt(0)); //a
 
 所以我们文章开头的问题，答案 __就是 . 运算符提供了装箱操作，它会根据基础类型构造一个临时对象，使得我们能在基础类型上调用对应对象的方法__。
 
-## 类型转换
+### 类型转换
 
 讲完了基本类型，我们来介绍一个现象：类型转换。
 
@@ -203,7 +203,7 @@ console.log("abc".charAt(0)); //a
 在较小的范围内，数字到字符串的转换是完全符合你直觉的十进制表示。当Number绝对值较大或者较小时，字符串表示则是使用科学计数法表示的。这个算法细节繁多，我们从感性的角度认识，它其实就是保证了产生的字符串不会过长。
 具体的算法，你可以去参考JavaScript的语言标准。由于这个部分内容，我觉得在日常开发中很少用到，所以这里我就不去详细地讲解了。
 
-## 装箱转换
+### 装箱转换
 
 每一种基本类型Number、String、Boolean、Symbol在对象中都有对应的类，__所谓装箱转换，正是把基本类型转换为对应的对象，它是类型转换中一种相当重要的种类。__
 前文提到，全局的 Symbol 函数无法使用 new 来调用，但我们仍可以利用装箱机制来得到一个 Symbol 对象，我们可以利用一个函数的call方法来强迫产生装箱。
@@ -233,7 +233,7 @@ console.log(Object.prototype.toString.call(symbolObject)); //[object Symbol]
 ```
 在 JavaScript 中，没有任何方法可以更改私有的 Class 属性，因此Object.prototype.toString 是可以准确识别对象对应的基本类型的方法，它比 instanceof 更加准确。
 但需要注意的是，call本身会产生装箱操作，所以需要配合 typeof 来区分基本类型还是对象类型。
-## 拆箱转换
+### 拆箱转换
 __在JavaScript标准中，规定了 ToPrimitive 函数，它是对象类型到基本类型的转换（即，拆箱转换）__。
 对象到 String 和 Number 的转换都遵循“先拆箱再转换”的规则。通过拆箱转换，把对象变成基本类型，再从基本类型转换为对应的 String 或者 Number。
 拆箱转换会尝试调用 valueOf 和 toString 来获得拆箱后的基本类型。如果 valueOf 和 toString 都不存在，或者没有返回基本类型，则会产生类型错误 TypeError。

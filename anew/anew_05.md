@@ -12,18 +12,18 @@
 这是一篇我们选择的wiki文章，虽然在原本的wikipedia网站中，也是大量使用了div和span来完成功能。在这里，我们来尝试分析一下，应该如何用语义类标签来呈现这样的一个页面/文章。
 我们看一下这个页面。
 
-## aside
+### aside
 
 ![图片描述](https://b1-q.mafengwo.net/s4/M00/A8/C7/wKgIDlzvfdGAFEKOAAU_PTwE06o385.png)
 
 首先我们来看下，左侧侧边栏，根据上一篇文章中提到的语义定义，这里属于aside内容。是导航性质的工具内容。
 
-## article
+### article
 ![图片描述](https://p2-q.mafengwo.net/s4/M00/A8/C7/wKgIDlzvfdKAPNZUAA6-GSxktQY000.png)
 
 我们来到文章主体部分，因为主体部分具有明确的独立性，所以可以用article来包裹。
 
-## hgroup, h1, h2
+### hgroup, h1, h2
 
 ![图片描述](https://b2-q.mafengwo.net/s11/M00/E0/51/wKgBEFzvfh2AE96FAA7ryMovirc432.png)
 
@@ -38,7 +38,7 @@
 
 ```
 
-## abbr
+### abbr
 
 ![图片描述](https://b4-q.mafengwo.net/s12/M00/20/34/wKgED1zvfl-AaQ6IAAVCDoh7CCI627.png)
 abbr标签表示缩写。考虑到WWW是World Wide Web的缩写，所以文中所有出现的WWW，都应该使用abbr标签，
@@ -46,13 +46,13 @@ abbr标签表示缩写。考虑到WWW是World Wide Web的缩写，所以文中�
 ```
 <abbr title="World Wide Web">WWW</abbr>.
 ```
-## hr
+### hr
 
 ![图片描述](https://p1-q.mafengwo.net/s11/M00/E1/0E/wKgBEFzvfl-AXQczAA7tZpKcMFA333.png)
 
 细心的同学会发现，在wiki的界面中，出现了一条很长的横线，大家都知道hr标签表示横向分隔线，那么这个地方是不是应该用hr呢？答案是不用。我们读一下标准的定义就知道了，hr表示故事走向的转变或者话题的转变，显然此处两个标题并非这种关系，所以我们应该使用CSS的border来把它当作纯视觉效果来实现，所以这里是不需要用hr的。
 
-## p
+### p
 
 ![图片描述](https://b3-q.mafengwo.net/s13/M00/73/18/wKgEaVzvfsGAfcQZAA7j85G5rqE989.png)
 
@@ -63,7 +63,7 @@ abbr标签表示缩写。考虑到WWW是World Wide Web的缩写，所以文中�
 >Not to be confused with the Internet.
 HTML中并没有note相关的语义，所以，我们用普通的p标签，加上class="note"来实现。后面的多数自然段都是普通的段落，我们用p标签来实现。
 
-## strong
+### strong
 
 ![图片描述](https://p3-q.mafengwo.net/s13/M00/73/18/wKgEaVzvfsGAYuYtAA4p3q1cbuA971.png)
 
@@ -76,7 +76,7 @@ A global map of the web index for countries in 2014
 ......
 ```
 
-## blockquote, q, cite
+### blockquote, q, cite
 
 ![图片描述](https://b3-q.mafengwo.net/s13/M00/73/16/wKgEaVzvfsCADGsWAALdIGafFuc034.png)
 
@@ -99,7 +99,7 @@ A global map of the web index for countries in 2014
 ![图片描述](https://b1-q.mafengwo.net/s13/M00/73/17/wKgEaVzvfsGADZNFAAWHIj1T5NE136.png)
 
 这里我们看看引用的原文就可以知道，wiki文章中的信息并非直接引用，如果是直接引用的内容，那么，我们还应该加上blockquote或者q标签。
-## time
+### time
  
 ![图片描述](https://b3-q.mafengwo.net/s13/M00/73/16/wKgEaVzvfsCADGsWAALdIGafFuc034.png)
 
@@ -110,7 +110,7 @@ A global map of the web index for countries in 2014
 
 ```
 
-## figure, figcaption
+### figure, figcaption
 
 
 ![图片描述](https://b3-q.mafengwo.net/s12/M00/21/AF/wKgED1zvf7qAMO5sAAU7a6tGwIg008.png)
@@ -129,7 +129,7 @@ A global map of the web index for countries in 2014
 这种插入文章中的内容，不仅限图片，代码、表格等，只要是具有一定自包含性（类似独立句子）的内容，都可以用figure。这里面，我们用figcaption表示内容的标题，当然，也可以没有标题。
 
 
-## dfn
+### dfn
 
 
 ![图片描述](https://n4-q.mafengwo.net/s1/M00/76/59/wKgIC1zvf_uAZovmAAWkrzgt2-8234.png)
@@ -148,7 +148,7 @@ In contrast, the <dfn>World Wide Web</dfn> is a global collection of documents a
 
 代码中你可以看见，你需要在你要定义的词前后放上dfn标签，所以我们知道了，dfn标签是用来包裹被定义的名词。
 
-## nav, ol, ul
+### nav, ol, ul
 
 ![图片描述](https://b2-q.mafengwo.net/s1/M00/76/5A/wKgIC1zvf_uAQgqPAANUo0Wlwv4543.png)
 
@@ -174,7 +174,7 @@ In contrast, the <dfn>World Wide Web</dfn> is a global collection of documents a
 我们这里必须要指出，ol和ul的区分是内容是否有顺序关系，每一项的前面不论是数字还是点，都不会影响语义的判断。所以，你可以注意一下这里，不要因为视觉表现效果，而改变语义的使用。
 
 
-## pre, samp, code
+### pre, samp, code
 
 ![图片描述](https://b4-q.mafengwo.net/s1/M00/76/5A/wKgIC1zvf_uAfdP-AASoIVQ6cgk467.png)
 
@@ -226,7 +226,7 @@ Host: www.example.org
 ```
 
 在后面的代码中，还有一些在行内的code，比如 title和 p括起来的内容，这些也都应该使用code标签。
-# 总结
+## 总结
 
 在这一篇Wiki文章中，已经涉及了大部分语义标签，可见HTML工作组对语义标签的增加是非常谨慎和保守的。
 当然了，我们选择的案例不可能刚巧覆盖所有的标签，还有些没讲到的标签，我们这里稍微做一下简要的补充说明。
