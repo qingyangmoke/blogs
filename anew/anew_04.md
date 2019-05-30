@@ -274,7 +274,7 @@ aside和header中都可能出现导航（nav标签），二者的区别是， he
 
 最后footer中包含address，这是个非常容易被误用的标签。address并非像date一样，表示一个给机器阅读的地址，而是表示“文章（作者）的联系方式”，address明确地只关联到article和body。
 
-###总结
+### 总结
 
 本篇中我们介绍了一些基本原则和HTML文档的整体结构，从整体上了解了HTML语义。
 

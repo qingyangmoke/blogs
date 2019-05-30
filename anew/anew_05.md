@@ -1,132 +1,238 @@
-## 02--列一份前端知识架构图
-### 音频链接：[02--列一份前端知识架构图](https://static001.geekbang.org/resource/audio/1b/fc/1b3f00a84800be3c47756694e6cdcafc.mp3)
+## 04--HTML语义：如何运用语义类标签来呈现Wiki网页？
+### 音频链接：[HTML语义：如何运用语义类标签来呈现Wiki网页？](https://static001.geekbang.org/resource/audio/42/3b/424db97fd6e0a766176add860d837c3b.mp3)
 
+你好，我是winter，今天我们继续来聊聊HTML模块的语义类标签。
+在上一篇文章中，我花了大量的篇幅和你解释了正确使用语义类标签的好处和一些场景。那么，哪些场景适合用到语义类标签呢，又如何运用语义类标签呢？
+不知道你还记不记得在大学时代，你被导师逼着改毕业论文格式的情景，如果你回想一下，你在论文中使用的那些格式，你会发现其实它们都是可以用HTML里的语义标签来表示的。
+这正是因为HTML最初的设计场景就是“超文本”，早期HTML工作组的专家都是出版界书籍排版的专家。
+所以，在这一部分，我们找了个跟论文很像的案例：wikipedia文章，这种跟论文相似的网站比较适合用来学习语义类标签。通过分析一篇wiki的文章用到的语义类标签，来进一步帮你理解语义的概念。
+你可以在电脑上，打开这个页面：https://en.wikipedia.org/wiki/World_Wide_Web
+（为了防止这个页面被修改，我们保存了一个副本http://static001.geekbang.org/static/time/quote/World_Wide_Web-Wikipedia.html）
 
-在上一篇文章中，我们简要地总结了前端的学习路径与方法，我们提到的第一个学习方法就是：建立知识框架。那么，今天我们就一起来列一份前端的知识框架图。
+这是一篇我们选择的wiki文章，虽然在原本的wikipedia网站中，也是大量使用了div和span来完成功能。在这里，我们来尝试分析一下，应该如何用语义类标签来呈现这样的一个页面/文章。
+我们看一下这个页面。
 
-在开始列框架之前，我想先来谈谈我们的目标。实际上，我们在网上可以找到很多参考资料，比如MDN这样的参考手册，又比如一份语言标准，但是我们的课程既不是一本参考手册，也不是一份语言标准。 __参考手册希望做到便于查阅、便于理解和全面，语言标准的目标是严谨、无遗漏、无歧义。__ 
+## aside
 
-而我们的课程有什么不同呢？我认为，作为一个课程，有两个目标：一个是把无法通过查阅解决的原理和背景讲清楚，另一个是把不方便查阅和记忆的内容整理好。
+![图片描述](https://b1-q.mafengwo.net/s4/M00/A8/C7/wKgIDlzvfdGAFEKOAAU_PTwE06o385.png)
 
-我会尽量避免像前面提到的两种文档一样逐条目罗列知识点和细节，当然，这不是在说两种文档没有价值，而是我们各有分工，参考手册和语言标准做的事情，我们没必要重复去做，即使做了也不一定能做得更好。
+首先我们来看下，左侧侧边栏，根据上一篇文章中提到的语义定义，这里属于aside内容。是导航性质的工具内容。
 
- __在这个课程里，我希望能和你一起打造一个前端知识的框架，再把知识点做个遍历，这其中，有原理和背景的部分，我去讲解知识的原理和背景。如果没有的话，我们就去讲整理和记忆这部分知识的方法，这样，即使你遇见无法一下子记住的知识，也可以很容易地查阅参考手册和标准来解决。__ 
+## article
+![图片描述](https://p2-q.mafengwo.net/s4/M00/A8/C7/wKgIDlzvfdKAPNZUAA6-GSxktQY000.png)
 
-如果让我做一个划分，前端的知识在总体上分成 基础部分和实践部分，基础部分包含了 JavaScript语言 （模块一）、 CSS和HTML!! （模块二）以及 浏览器的实现原理和API （模块三），这三个模块涵盖了一个前端工程师所需要掌握的全部知识。
+我们来到文章主体部分，因为主体部分具有明确的独立性，所以可以用article来包裹。
 
-学完这三个部分，你再结合基本的编程能力，就可以应对基本的前端开发工作了。实践部分（模块四）重点会 介绍我在工作过程中遇到的问题和解决方案，希望这块内容能够帮助你和你的前端团队找到可能的发展方向和着力点 。
-### JavaScript
-![图片描述](https://p4-q.mafengwo.net/s11/M00/DC/72/wKgBEFzvel-AGefRAAEe9Ch4BnU606.png)
+## hgroup, h1, h2
 
-上面是我整理的JavaScript知识架构图，下面我们来具体解释一下。
+![图片描述](https://b2-q.mafengwo.net/s11/M00/E0/51/wKgBEFzvfh2AE96FAA7ryMovirc432.png)
 
-在JavaScript的模块中，首先我们可以把语言按照文法、语义和运行时来拆分，这符合编程语言的一般规律： __用一定的词法和语法，表达一定语义，从而操作运行时。__
+在语义的上一篇文章中，我们介绍过hgroup和h1-h6的作用，hgroup是标题组，h1是一级标题，h2是二级标题。这里，World Wide Web 是文章的大标题，适合h1元素。
+接下来出现了一个副标题。From Wikipedia, the free encyclopedia。这个地方适合使用h2，跟h1组成一个hgroup，所以代码可能是类似这样的:
 
-接下来，我们又按照程序的一般规律，把运行时分为数据结构和算法部分 ：数据结构包含类型和实例（JavaScript的类型系统就是它的7种基本类型和7种语言类型，实例就是它的内置对象部分）。所谓的算法，就是JavaScript的执行过程。
+```
+<hgroup>
+<h1>World Wide Web </h1>
+<h2>From Wikipedia, the free encyclopedia</h2>
+</hgroup>
 
-类型部分中，对象比其它所有类型加起来都要更为复杂，所以我们会用较长的篇幅来讲解对象，包括它的一些历史和设计思路。
+```
 
-执行过程我们则需要按照从大结构到小结构的角度讲解，从最顶层的程序与模块、事件循环和微任务，到函数、再到语句级的执行。我们从粗到细地了解执行过程。
+## abbr
 
-实例部分，对JavaScript来说类似基础库，JavaScipt的内置对象多达150以上，考虑到我们即使逐次讲解也必定不如MDN更加细致全面，所以我们会从应用和机制的角度，挑选其中几个体系来讲解。
+![图片描述](https://b4-q.mafengwo.net/s12/M00/20/34/wKgED1zvfl-AaQ6IAAVCDoh7CCI627.png)
+abbr标签表示缩写。考虑到WWW是World Wide Web的缩写，所以文中所有出现的WWW，都应该使用abbr标签，
 
-文法中的语法和语义基本是一一对应关系，在JavaScript标准中有一份语法定义表，它同样不适合一一讲解，我们会从JavaScript语法中特别的地方，以及与日常开发比较相关的地方来重点讲解，剩下的内容和词法部分，我们会带领大家做一些数据挖掘工作，从这份表格中找到一些和我们日常开发息息相关的内容。
+```
+<abbr title="World Wide Web">WWW</abbr>.
+```
+## hr
 
-语义的大部分内容我们会在运行时的讲解中透出，同时它又跟语法有对应的关系，所以我们不再单独拿出来讲解。
+![图片描述](https://p1-q.mafengwo.net/s11/M00/E1/0E/wKgBEFzvfl-AXQczAA7tZpKcMFA333.png)
 
-### HTML 和 CSS
-![图片描述](https://static001.geekbang.org/resource/image/41/62/4153891927afac7f4c21ccf6a141f062.png)
+细心的同学会发现，在wiki的界面中，出现了一条很长的横线，大家都知道hr标签表示横向分隔线，那么这个地方是不是应该用hr呢？答案是不用。我们读一下标准的定义就知道了，hr表示故事走向的转变或者话题的转变，显然此处两个标题并非这种关系，所以我们应该使用CSS的border来把它当作纯视觉效果来实现，所以这里是不需要用hr的。
 
-上面是我整理的HTML和CSS的知识架构图，我们来具体解释一下。
+## p
 
- __在HTML的部分__ ，我们会按照 __功能和语言__  来划分它的知识，HTML的功能主要由标签来承担，所以我们首先会把标签做一些分类，并对它们分别进行讲解。
-我们都知道HTML的标签可以分为很多种，head里面的我们称为元信息类标签 ，诸如title、meta、style、link、base这些，它们用来 描述文档的一些基本信息 。还有一类是一些诸如section、nav的标签，它们在视觉表现上跟div并没有区别，但是各有各的适用场景，我们把它们称作语义类标签 。另外一类是img、video、audio之类的 替换型媒体类标签 ，用来引入外部内容，平常开发中你也会经常用到。再有就是表单类的，比如input、button。
+![图片描述](https://b3-q.mafengwo.net/s13/M00/73/18/wKgEaVzvfsGAfcQZAA7j85G5rqE989.png)
 
-所以，基于这样的分类，我把标签分成下面几种。
+接下来一段，我们看到了三段“note”，也就是注记。它在文章中用作额外注释。
 
-- 文档元信息：通常是出现在head标签中的元素，包含了描述文档自身的一些信息；
-- 语义相关：扩展了纯文本，表达文章结构、不同语言要素的标签；
-- 链接：提供到文档内和文档外的链接；
-- 替换型标签：引入声音、图片、视频等外部元素替换自身的一类标签；
-- 表单：用于填写和提交信息的一类标签；
-- 表格：表头、表尾、单元格等表格的结构。
+>“WWW” and “The Web” redirect here. For other uses of WWW, see WWW (disambiguation). For other uses of web, see Web (disambiguation).
+>For the first web software, see WorldWideWeb.
+>Not to be confused with the Internet.
+HTML中并没有note相关的语义，所以，我们用普通的p标签，加上class="note"来实现。后面的多数自然段都是普通的段落，我们用p标签来实现。
 
-我们的重点会放在前四种标签上，表单和表格较少用到，而且基本以查阅型知识为主，这里就不拿出来讲解了。
+## strong
 
-除了标签之外，我们还应该把HTML当作一门语言来了解下，当然，标记语言跟编程语言不太一样，没有编程语言那么严谨，所以，我们会简要介绍HTML的语法和几个重要的语言机制： !!#cc0000 实体、命名空间!! 。
+![图片描述](https://p3-q.mafengwo.net/s13/M00/73/18/wKgEaVzvfsGAYuYtAA4p3q1cbuA971.png)
 
-最后我们会介绍下HTML的补充标准：ARIA，它是HTML的扩展，在可访问性领域，它有至关重要的作用。
+注意，这里 “World Wide Web (WWW)” 和 “the Web” 使用了黑体呈现，从上下文来看，这里表示这个词很重要，所以我们使用strong标签。
 
- __CSS部分__ ，按照惯例，我们也会从  __语言和功能__ 两个角度去介绍。在语言部分， 我们会从大到小介绍CSS的各种语法结构，比如@rule、选择器、单位等等 。功能部分，我们大致可以分为布局、绘制和交互类。
+```
+<p> 
+A global map of the web index for countries in 2014
+<strong>The World Wide Web (WWW)</strong>, also called <strong>the Web</strong>,
+......
+```
 
-在布局类我们介绍两个最常用的布局：正常流和弹性布局 。绘制类我们则会分成图形相关的和文字相关的绘制 。最后我们会介绍动画和其它交互。
+## blockquote, q, cite
 
-### 浏览器的实现原理和API
+![图片描述](https://b3-q.mafengwo.net/s13/M00/73/16/wKgEaVzvfsCADGsWAALdIGafFuc034.png)
 
-![浏览器的实现原理和API](https://static001.geekbang.org/resource/image/cb/cb/cbb6d198ccfb95af4906eeb0581333cb.png)
+接下来我们看到了一个论文中很常见的用法“引述”。
+> interlinked by hypertext links, and accessible via the Internet.[1]
+注意看这里的[1]，当我们把鼠标放上去的时候，出现了引述的相关信息：
+>“What is the difference between the Web and the Internet?”. W3C Help and FAQ. W3C. 2009. Archived from the original on 9 July 2015. Retrieved 16 July 2015.
 
+在HTML中，有三个跟引述相关的标签blockquote表示段落级引述内容，q表示行内的引述内容，cite表示引述的作品名。
 
-上面是我整理的浏览器知识架构图，我们来具体看一下。
-浏览器部分我们会先介绍下浏览器的实现原理，这是我们深入理解API的基础。
+这里的作品名称 “What is the difference between the Web and the Internet?”，应当使用cite标签。
 
-我们会从一般的浏览器设计出发， 按照解析、构建DOM树、计算CSS、渲染、合成和绘制的流程来讲解浏览器的工作原理。
+```
+<cite>"What is the difference between the Web and the Internet?"</cite>. W3C Help and FAQ. W3C. 2009. Archived from the original on 9 July 2015. Retrieved 16 July 2015.
 
-在API部分，我们会从W3C零散的标准中挑选几个大块的API来详细讲解，主要有：事件、DOM、CSSOM几个部分，它们分别覆盖了交互、语义和可见效果，这是我们工作中用到的主要内容。
+```
 
-其他的API怎么办呢，别着急，在最后，我会给出一份Chrome已经实现的API跟W3C标准的对应关系和它的生成过程，来覆盖其它部分。
+在文章的结尾处，有对应的 References 一节，这一节中所有的作品名称也应该加入cite标签。
 
-### 前端工程实践
+![图片描述](https://b1-q.mafengwo.net/s13/M00/73/17/wKgEaVzvfsGADZNFAAWHIj1T5NE136.png)
 
-![前端工程实践](https://static001.geekbang.org/resource/image/45/ce/4568011037a5591402c4ba1547ba0dce.jpg)
-
-
-最后一个模块是前端工程实践。我们在掌握了前面的基础知识之后，也就基本掌握了做一个前端工程师的底层能力。在这个模块中， 我选择了性能、工具链、持续集成、搭建系统、架构与基础库这几个方向的前端工程实践案例，来与你一起分享我的经验。
-
-__性能__ 
-首先我们会谈谈性能。对任何一个前端团队而言，性能是它价值的核心指标，从早年“重构”的实践开始，前端有通过 __性能__ 证明自己价值的传统。 
-但是性能并非细节的堆砌，也不是默默做优化，所以，我会 从团队的角度来跟你一起探讨性能的方法论和技术体系 。
-
-__工具链__ 
-
-下一个案例是工具链。这一部分，我将会探讨企业中工具链的建设思路。对一个高效又合作良好的前端团队来说， 一致性的工具链是不可或缺的保障，作为开发阶段的入口，工具链又可以和性能、发布、持续集成等系统链接到一起，成为团队技术管理的基础。
-
-__持续集成__
-
-接下来还会给大家介绍前端的持续集成，持续集成并非一个新概念，但是过去持续集成概念和理论都主要针对软件开发，而对前端来说，持续集成是一个新的课题（ 当然对持续集成来说，前端也是一个新课题 ），比如daily build就完全不适用前端，前端代码必须是线上实时可用的。这一部分内容将会针对前端的持续集成提出一些建设的思路。
-
-__搭建系统__  
-
-接下来的案例是搭建系统，前端工作往往多而繁杂，针对高重复性、可模块化的业务需求，传统的人工开发不再适用，搭建系统是大部分大型前端团队的选择。这一部分内容我将会介绍什么是搭建系统，以及一些常见的搭建系统类型。
-
-__架构与基础库__
-
-最后一个部分，会给大家介绍前端架构和基础库的知识。软件架构师主要解决功能复杂性的问题，服务端架构师主要解决高流量问题，而前端是页面间天然解耦，分散在用户端运行的系统，但是前端架构也有自己要解决的问题。
-
-前端需求量大、专业人才稀缺，更因为前端本身运行在浏览器中，有大量兼容工作要做。所以前端架构的主要职责是 __兼容性、复用和能力扩展__ 。这一部分文章我将会介绍前端架构工作的一些思路和切入点。
-
-上面的这些案例来自我在领导手淘前端团队时的经验，和我在阿里巴巴工作参与晋升面试时听到的案例，这些内容几乎是每一个年轻的前端团队成长过程中都会需要的基础设施。
-
-好了，前端的知识体系我们大致列出来了。你可能发现了，知识体系图中的每一个知识点，专栏里都有与之对应的文章，这也是我的初衷：希望借由讲解这40余个知识点，帮你建立起前端的知识框架。
-
-![前端的知识框架](https://static001.geekbang.org/resource/image/d1/a8/d1cb4040d91207075e0591abffe1b9a8.jpg)
-
-讲述形式
-
-基于这份知识框架图，我们的课程主要采用两种讲述形式： 一种是重点讲解的课程，一种是知识图谱型的课程。 
-
-重点讲解的课程我们会从 技术的背景、原理和设计出发，把知识的内容呈现出来。这种形式适用于有体系和源流的知识，比较适合系统学习和理解，比如JavaScript中的对象、CSS的排版。
-
-知识图谱型的课程则提供一些方法，用表格或者脑图的形式来整理知识的结构。这种形式适用于零散的知识，比较适合记住大概，用到时去查阅，比如JavaScript的词法、HTML中的所有标签、以及浏览器中的API就十分适合这样的讲解方式。
-
-### 结语
-
-今天我带你一起划分了前端的知识内容，前端的基础知识分成JavaScript、HTML、CSS以及浏览器四大重点模块，每个模块也分别有自己的技术重点。你可以在框架中，挑选你最需要的前端知识，按需学习。
-
-当然，这篇文章最重要的是，我希望能帮你建立一个理解前端的全景图。这样，任何时候，你都能够体系地思考问题，分析问题。
-
-你觉得你的划分跟我一样吗，你还有其他的想法，你觉得是否有想了解的知识不在其中，欢迎给我留言。
-
-### 附录：知识点发布顺序
-![知识点发布顺序](https://static001.geekbang.org/resource/image/87/23/872a9129abe06b1f2cb3c18b63209323.jpg)
-
+这里我们看看引用的原文就可以知道，wiki文章中的信息并非直接引用，如果是直接引用的内容，那么，我们还应该加上blockquote或者q标签。
+## time
  
+![图片描述](https://b3-q.mafengwo.net/s13/M00/73/16/wKgEaVzvfsCADGsWAALdIGafFuc034.png)
+
+这里除了引用的文章外，还出现了日期，为了让机器阅读更加方便，可以加上time标签：
+
+```
+<cite>"What is the difference between the Web and the Internet?"</cite>. W3C Help and FAQ. W3C. 2009. Archived from the original on <time datetime="2015-07-09">9 July 2015</time>. Retrieved <time datetime="2015-07-16">16 July 2015</time>.
+
+```
+
+## figure, figcaption
+
+
+![图片描述](https://b3-q.mafengwo.net/s12/M00/21/AF/wKgED1zvf7qAMO5sAAU7a6tGwIg008.png)
+
+
+我们注意一下文章的右侧，出现了几张图片，这种出现在文中的图片，不仅仅是一个img标签，它和下面的文字组成了一个figure的语法现象，figure也是我们的一种标签（用于表示与主文章相关的图像、照片等流内容）。
+
+```
+<figure>
+ <img src="https://.....440px-NeXTcube_first_webserver.JPG"/>
+ <figcaption>The NeXT Computer used by Tim Berners-Lee at CERN.</figcaption>
+</figure>
+
+```
+
+这种插入文章中的内容，不仅限图片，代码、表格等，只要是具有一定自包含性（类似独立句子）的内容，都可以用figure。这里面，我们用figcaption表示内容的标题，当然，也可以没有标题。
+
+
+## dfn
+
+
+![图片描述](https://n4-q.mafengwo.net/s1/M00/76/59/wKgIC1zvf_uAZovmAAWkrzgt2-8234.png)
+
+然后我们继续往下看，来注意这一句：
+
+>The terms Internet and World Wide Web are often used without much distinction. However, the two are not the same. The Internet is a global system of interconnected computer networks. In contrast, the World Wide Web is a global collection of documents and other resources, linked by hyperlinks and URIs.
+
+这里分别定义了Internet和World Wide Web，我们应该使用dfn标签。
+
+```
+The terms Internet and World Wide Web are often used without much distinction. However, the two are not the same. 
+The <dfn>Internet</dfn> is a global system of interconnected computer networks.
+In contrast, the <dfn>World Wide Web</dfn> is a global collection of documents and other resources, linked by hyperlinks and URIs. 
+```
+
+代码中你可以看见，你需要在你要定义的词前后放上dfn标签，所以我们知道了，dfn标签是用来包裹被定义的名词。
+
+## nav, ol, ul
+
+![图片描述](https://b2-q.mafengwo.net/s1/M00/76/5A/wKgIC1zvf_uAQgqPAANUo0Wlwv4543.png)
+
+接下来，几个普通的段落之后，我们看到了文章的目录。这里的目录链接到文章的各个章节，我们可以使用nav标签。因为这里的目录顺序不可随意变化，所以我们这里使用多级的ol结构。
+
+```
+<nav>
+  <h2>Contents</h2>
+  <ol>
+    <li><a href="...">History</a></li>
+    <li><a href="...">Function</a>
+      <ol>
+        <li><a href="...">Linking</a></li>
+        <li><a href="...">Dynamic updates of web pages</a></li>
+        ...
+      </ol>
+    </li>
+    ...
+  </ol>
+</nav>
+```
+
+我们这里必须要指出，ol和ul的区分是内容是否有顺序关系，每一项的前面不论是数字还是点，都不会影响语义的判断。所以，你可以注意一下这里，不要因为视觉表现效果，而改变语义的使用。
+
+
+## pre, samp, code
+
+![图片描述](https://b4-q.mafengwo.net/s1/M00/76/5A/wKgIC1zvf_uAfdP-AASoIVQ6cgk467.png)
+
+继续往下，我们来到了这里，我们看见这篇文章有一个很重要的特色，文章中嵌入了一些代码和一些预先编写好的段落。我们看到在“Function”小节中有一段背景色是灰色的文字。
+
+```
+GET /home.html HTTP/1.1
+Host: www.example.org
+```
+
+这是一段HTTP协议的内容描述，因为这段内容的换行是非常严格的，所以我们不需要浏览器帮我们做自动换行，因此我们使用了pre标签，表示这部分内容是预先排版过的，不需要浏览器进行排版。</p><p>又因为这是一段计算机程序的示例输出，所以我们可以使用samp标签：
+
+```
+<pre><samp>
+GET /home.html HTTP/1.1
+Host: www.example.org
+</samp></pre>
+
+```
+
+接下来Wiki中的内容出现了一段HTML代码，我们同样不希望浏览器做自动换行。
+
+```
+<html>
+  <head>
+    <title>Example.org – The World Wide Web</title>
+  </head>
+  <body>
+    <p>The World Wide Web, abbreviated as WWW and commonly known ...</p>
+  </body>
+</html>
+
+```
+
+因为同时是代码，我们还需要加上code标签。最后的代码是pre标签包裹了code标签，code标签包裹了HTML代码。
+
+```
+<pre><code>
+<html>
+ <head>
+    <title>Example.org – The World Wide Web</title>
+  </head>
+  <body>
+   	<p>The World Wide Web, abbreviated as WWW and commonly known ...</p>
+  </body>
+</html>
+</code></pre>
+
+```
+
+在后面的代码中，还有一些在行内的code，比如 title和 p括起来的内容，这些也都应该使用code标签。
+# 总结
+
+在这一篇Wiki文章中，已经涉及了大部分语义标签，可见HTML工作组对语义标签的增加是非常谨慎和保守的。
+当然了，我们选择的案例不可能刚巧覆盖所有的标签，还有些没讲到的标签，我们这里稍微做一下简要的补充说明。
+
+![图片描述](https://b2-q.mafengwo.net/s10/M00/A9/B7/wKgBZ1zvgHuABrS3AAKl5QFD_I0600.png)
+
+（长按点击大图查看）
+
+实际上，HTML这种语言，并不像严谨的编程语言一样，有一条非此即彼的线。一些语义的使用其实会带来争议，所以我的建议是：你可以尽量只用自己熟悉的语义标签，并且只在有把握的场景引入语义标签。这样，我们才能保证语义标签不被滥用，造成更多的问题。
